@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Righteous", cursive;
+}
+
+b {
+  width: 200px;
+  padding: 20px 30px;
+  border-radius: 50px;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+}
+b:hover .wave {
+  top: -120px;
+}
+b span {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 8px;
+}
+b .wave {
+  width: 200px;
+  height: 200px;
+  background-color: #2d6192;
+  box-shadow: inset 0 0 50px rgba(43, 42, 44, 0.5);
+  position: absolute;
+  left: 0;
+  top: -80px;
+  transition: 0.4s;
+}
+b .wave::before, a .wave::after {
+  width: 200%;
+  height: 200%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+b .wave::before {
+  border-radius: 45%;
+  background-color: #1b3f6e;
+  animation: wave 5s linear infinite;
+}
+b .wave::after {
+  border-radius: 40%;
+  background-color: rgba(17, 42, 97, 0.5);
+  animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
